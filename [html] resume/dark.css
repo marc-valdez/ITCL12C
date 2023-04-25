@@ -1,0 +1,35 @@
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
+a {
+  color: #b0bec5;
+}
+
+a:hover {
+  color: #fff;
+}
+
+table {
+  background-color: #333;
+  color: #fff;
+}
+
+table th {
+  background-color: #555;
+}
+
+table tr:nth-child(2n) {
+  background-color: #444;
+}
+
+img {
+  float: right;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+}
