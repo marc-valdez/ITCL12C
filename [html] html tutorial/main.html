@@ -2,83 +2,106 @@
 <head>
     <title>HTML Tutorial</title>
     <style>
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        body{
+            font-family: "Arial", sans-serif;
         }
         .title{
             text-align: center;
+        }
+        .white_text{
+            color: white;
+        }
+        .cell_color1{
+            background-color: #6766cc;
+        }
+        .cell_color2{
+            background-color: #9899c9;
+        }
+        .cell_color3{
+            background-color: #abb9dc;
+        }
+        .cell_color4{
+            background-color: #9799ca;
+            padding-bottom: 6px;
+        }
+        .cell_color5{
+            background-color: #cccccc;
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        .cell_color6{
+            background-color: #fefecc;
+            padding-left: 18px;
+            padding-right: 18px;
         }
     </style>
 </head>
 <body>
     <header></header>
-    <table width="100%" height="75%" border="0" cellspacing="0" cellpadding="0">
+    <table width="70%" height="75%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-            <td>
-                <h1 class="title">HTML<br>Tutorial</h1>
+            <td class="cell_color1">
+                <h1 class="title"><span class="white_text">HTML<br>Tutorial</span></h1>
             </td>
-            <td colspan="2">
+            <td class="cell_color2" colspan="2">
                 <h1 class="title">HTML Tutorial</h1>
             </td>
-            <td></td>
         </tr>
         <tr>
-            <td colspan="3">Header</td>
-            <td></td>
-            <td></td>
+            <td class="cell_color3" colspan="3"><br><br></td>
         </tr>
         <tr>
-            <td width="20%">
+            <td class="cell_color4" width="20%">
                 <h3 class="title">Lessons</h3>
-                <table width="150" border="0" align="center" cellspacing="3" cellpadding="3">
-                    <tr>
+                <table width="80%" border="0" align="center" cellspacing="3" cellpadding="3">
+                    <tr class="cell_color6">
                         <td>
                             <a href="#home">Home</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#basic_html">Basic HTML</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#essential_tags">Essential Tags</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#text_characteristics">Text Characteristics</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#text_appearance">Text Appearance</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#color_settings">Color Settings</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#creating_lists">Creating Lists</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#creating_tables">Creating Tables</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="cell_color6">
                         <td>
                             <a href="#html_assignment">HTML Assignment</a>
                         </td>
                     </tr>
                 </table>
             </td>
-            <td>
+            <td class="cell_color5" width="62%">
                 <h3 class="title">Designed to assist new users with hand-coding a Web site</h3>
                 <p>
                     This tutorial will walk you through the steps necessary to make a basic Web site.
@@ -94,7 +117,7 @@
                 </ul>
 
             </td>
-            <td width="20%">
+            <td class="cell_color6" width="18%">
                 <h3 class="title">Notes</h3>
                 <p>
                     This site is designed to lead you on a specific path to making your Web Site.
@@ -102,10 +125,8 @@
                 </p>
             </td>
         </tr>
-        <tr colspan="3">
-            <td>Footer</td>
-            <td></td>
-            <td></td>
+        <tr class="cell_color3">
+            <td colspan="3"><br><br></td>
         </tr>
     </table>
     <footer></footer>
