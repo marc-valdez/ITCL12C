@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+	<title>Laboratory Activity 1</title>
+	<style>
+		body {
+			font-family: Comic Sans MS;
+			color: #fff;
+			background-color: #222;
+		}
+		.form1 {
+			background-color: white;
+			color: black;
+			margin: auto;
+			text-align: left;
+			width: 600px;
+			height: auto;
+			padding: 50px;
+		}
+		.form1 h1, h6 {
+			text-align: center;
+		}
+		table {
+			width: 100%;
+			border-spacing: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="form1">
+		<form action="/2.html">
+			<fieldset>
+				<legend>User Form</legend>
+				<table>
+					<tr>
+						<td>
+							<ul><li>First Name</li></ul>
+						</td>
+						<td>
+							<input type=text id="first_name"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ul><li>Password</li></ul>
+						</td>
+						<td>
+							<input type=text id="first_name"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ul><li>Gender</li></ul>
+						</td>
+						<td>
+							<input type=radio id="html" name="gender"/>
+							<label for="male">Male</label>
+							<input type=radio id="html" name="gender"/>
+							<label for="female">Female</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ul><li>Address</li></ul>
+						</td>
+						<td>
+							<textarea name="address" rows="5" cols="20"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ul><li>D.O.B.</li></ul>
+						</td>
+						<td>
+							<select name="month">
+								<option value="jan">Jan</option>
+								<option value="feb">Feb</option>
+								<option value="mar" selected>Mar</option>
+							</select>
+							<select name="day">
+								<option value="day1">1</option>
+								<option value="day2" selected>2</option>
+								<option value="day3">3</option>
+							</select>
+							<select name="year">
+								<option value="2000" selected>2000</option>
+								<option value="2001">2001</option>
+								<option value="2002">2002</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ul><li>Select Games</li></ul>
+						</td>
+						<td>
+							<input type=checkbox id="hockey" name="game"/>
+							<label for="hockey">Hockey</label>
+							<input type=checkbox id="football" name="game"/>
+							<label for="football">Football</label>
+							<input type=checkbox id="cricket" name="game"/>
+							<label for="cricket">Cricket</label>
+							<input type=checkbox id="volleyball" name="game"/>
+							<label for="volleyball">Volleyball</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ul><li>Marital Status</li></ul>
+						</td>
+						<td>
+							<input type=radio id="married" name="marital_status"/>
+							<label for="married">Married</label>
+							<input type=radio id="unmarried" name="marital_status"/>
+							<label for="unmarried">Unmarried</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type=submit id="submit" value="Submit"/>
+							<input type=reset id="reset" value="Reset"/>
+							<br>
+							<input type=checkbox id="agreement"/>
+							<label for="agreement">I accept this agreement.</label>
+						</td>
+						
+					</tr>
+				</table>
+				
+			</fieldset>
+		</form>
+	</div>
+</body>

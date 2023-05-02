@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+	<title>Forms</title>
+	<style>
+		body {
+			font-family: Segoe UI;
+			color: #fff;
+			background-color: #222;
+		}
+		.form1 {
+			background-color: white;
+			color: black;
+			margin: auto;
+			text-align: left;
+			width: 400px;
+			height: auto;
+			padding: 50px;
+		}
+		.form1 h1, h6 {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="form1">
+		<h1>THE</h1>
+		<hr>
+		<form action="/submit.html">
+			<h4>Input Type = text</h4>
+			<label for="first_name">First Name</label><br>
+			<input type=text id="first_name"/>
+			<br>
+			<label for="last_name">Last Name</label><br>
+			<input type=text id="last_name"/>
+			
+			<h4>Input Type = radio</h4>
+			<input type=radio id="html" name="language"/>
+			<label for="html">HTML</label>
+			<br>
+			<input type=radio id="css" name="language"/>
+			<label for="css">CSS</label>
+			<br>
+			<input type=radio id="javascript" name="language"/>
+			<label for="javascript">Javascript</label>
+			
+			<h4>Input Type = checkbox</h4>
+			<input type=checkbox id="html" name="language"/>
+			<label for="html">HTML</label>
+			<br>
+			<input type=checkbox id="css" name="language"/>
+			<label for="css">CSS</label>
+			<br>
+			<input type=checkbox id="javascript" name="language"/>
+			<label for="javascript">Javascript</label>
+			
+			<h4>Input Type = dropdown</h4>
+			<select name="dropdown">
+				<option value="html">HTML</option>
+				<option value="css">CSS</option>
+				<option value="javascript" selected>Javascript</option>
+			</select>
+			
+			<h4>Input Type = textarea</h4>
+			<p>Hey Karen. What's your problem?</p>
+			<textarea name="whoyou" rows="5" cols="20"></textarea>
+			
+			<br><br>
+			<h6><input type=submit id="submit" value="SEND IT!"/></h6>
+		</form>
+	</div>
+</body>
