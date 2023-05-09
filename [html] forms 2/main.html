@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<title>Simple Web Layout using Div</title>
+<style>
+    body {
+        font-family: "Times New Roman", serif;
+        font-size: 20px;
+    }
+
+    .header {
+        color: gold;
+        background-color: orange;
+    }
+
+    .footer {
+        color: gold;
+        background-color: orange;
+        text-align: right;
+    }
+
+    .table_body {
+        color: gold;
+        background-color: rgb(35, 33, 49);
+    }
+
+    .left_column {
+        text-align: right;
+    }
+
+    .right_column {
+        text-align: left;
+    }
+
+    .submit_button {
+        border: 0;
+        color: white;
+        background-color: green;
+        padding: 10px 10px;
+        width: 70px;
+    }
+
+    .reset_button {
+        border: 0;
+        color: white;
+        background-color: red;
+        padding: 10px 10px;
+        width: 70px;
+    }
+
+    .cancel_button {
+        border: 0;
+        color: white;
+        background-color: blue;
+        padding: 10px 10px;
+        width: 70px;
+    }
+</style>
+</head>
+
+<body>
+    <div>
+        <table cellpadding="10" cellspacing="0" border="0" width="500">
+            <tr class="header">
+                <td colspan="2">Sign Up</td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">First Name</td>
+                <td class="right_column">
+                    <input type="text" value="Enter First Name">
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Last Name</td>
+                <td class="right_column">
+                    <input type="text" value="Enter Last Name">
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Date of Birth</td>
+                <td class="right_column">
+                    <select name="month">
+                        <option value="default_month" selected>Month</option>
+                        <option value="jan">Jan</option>
+                        <option value="feb">Feb</option>
+                        <option value="mar">Mar</option>
+                    </select>
+                    <select name="day">
+                        <option value="default_day" selected>Day</option>
+                        <option value="day1">1</option>
+                        <option value="day2">2</option>
+                        <option value="day3">3</option>
+                    </select>
+                    <select name="year">
+                        <option value="default_year" selected>Year</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Gender</td>
+                <td class="right_column">
+                    <input type=radio id="male" name="gender" />
+                    <label for="male">Male</label>
+                    <input type=radio id="female" name="gender" />
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Country</td>
+                <td class="right_column">
+                    <select name="country">
+                        <option value="default_country" selected>Country</option>
+                        <option value="australia">Australia</option>
+                        <option value="philippines">Philippines</option>
+                        <option value="croatia">Croatia</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Email</td>
+                <td class="right_column">
+                    <input type=text value="Enter Email..." />
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Phone</td>
+                <td class="right_column">
+                    <input type=text value="Enter Phone Number..." />
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Password</td>
+                <td class="right_column">
+                    <input type="password" />
+                </td>
+            </tr>
+            <tr class="table_body">
+                <td class="left_column">Confirm Password</td>
+                <td class="right_column">
+                    <input type="password" />
+                </td>
+            </tr class="table_body">
+            <tr class="table_body">
+                <td class="left_column"></td>
+                <td class="right_column">
+                    <input type="checkbox" id="agree" />
+                    <label for="agree">I Agree to the Terms of Use</label>
+                </td>
+            </tr class="table_body">
+            <tr class="footer">
+                <td colspan="2">
+                    <input class="submit_button" type="submit" />
+                    <input class="reset_button" type="reset" />
+                    <input class="cancel_button" type="button" value="Cancel" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
