@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Forms</title>
+	<style>
+		body {
+			font-family: Segoe UI;
+			color: #fff;
+			background-color: #222;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		.forms {
+			background-color: white;
+			color: black;
+		}
+
+		.left_column {
+			text-align: right;
+			width: 100px;
+		}
+
+		.right_column {
+			text-align: left;
+		}
+	</style>
+	<script>
+		function validate_form() {
+			var x = document.forms["form1"]["name"].value;
+			if (x == "") {
+				alert("Input cannot be empty.");
+				return false;
+			}
+			else {
+				alert("Success!");
+				return false;
+			}
+		}
+		function validate_name() {
+			var input = document.form2.data.value;
+			alert("Hello " + input + "! Welcome...");
+		}
+	</script>
+</head>
+
+<body>
+	<div class="forms">
+		<form name="form1"></form>
+		<table border="1" cellpadding="5" cellspacing="3">
+			<tr>
+				<td class="left_column">Name</td>
+				<td class="right_column">
+					<input type="text" name="user_name" />
+				</td>
+			</tr>
+			<tr>
+				<td class="left_column">Email</td>
+				<td class="right_column">
+					<input type="text" name="user_email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="left_column">Zip Code</td>
+				<td class="right_column">
+					<input type="text" name="ZIP_Code" />
+				</td>
+			</tr>
+			<tr>
+				<td class="left_column">Country</td>
+				<td class="right_column">
+					<select name="country">
+						<option value="default_country" selected>Country</option>
+						<option value="australia">Australia</option>
+						<option value="philippines">Philippines</option>
+						<option value="croatia">Croatia</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="left_column"></td>
+				<td class="right_column">
+					<input type="submit" />
+				</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+</body>

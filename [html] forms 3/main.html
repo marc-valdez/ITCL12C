@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+	<title>Forms</title>
+	<style>
+		body {
+			font-family: Segoe UI;
+			color: #fff;
+			background-color: #222;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+		.forms {
+			background-color: white;
+			color: black;
+			margin: auto;
+			text-align: center;
+			width: 600px;
+			height: auto;
+			padding: 50px;
+		}
+	</style>
+	<script>
+		function validate_form() {
+			var x = document.forms["form1"]["name"].value;
+			if(x == "") {
+				alert("Input cannot be empty.");
+				return false;
+			}
+			else {
+				alert("Success!");
+				return false;
+			}
+		}
+		function validate_name() {
+			var input = document.form2.data.value;
+			alert("Hello " + input + "! Welcome...");
+		}
+	</script>
+</head>
+<body>
+	<div class="forms">
+		<h1>Form Level Validation</h1>
+		<h6>checking only one field onSubmit event</h6>
+		<hr>
+		<form name="form1" onSubmit="return validate_form()" method="post">
+			<p>The name field must be entered. If not entered, an Alert will be displayed.</p>
+			Name: <input type="text" name="user_name"/>
+			<input type="submit" id="submit_name"/>
+		</form>
+	</div>
+	<br>
+	<div class="forms">
+		<h1>Example of onClick Event Handler</h1>
+		<hr>
+		<form name="form2">
+			<p>Click on the button after inputting your name into the text box:</p>
+			<input type="text" name="data" value="" size=10/>
+			<input type="button" value="Click Here!" onClick="validate_name(this.form)"/>
+		</form>
+	</div>
+</body>
