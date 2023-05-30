@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Reservations</title>
+    <style>
+        body {
+            font-family: Segoe UI;
+            color: #fff;
+            background-color: #222;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .forms {
+            background-color: white;
+            color: black;
+            margin: auto;
+            text-align: right;
+            width: 370px;
+            height: auto;
+            padding: 50px;
+        }
+
+        .left_column {
+            text-align: right;
+            width: 100px;
+        }
+
+        .right_column {
+            text-align: left;
+        }
+    </style>
+    <script type="text/javascript">
+        function addtext() {
+            var fname = document.form1.full_name.value;
+            var email = document.form1.email.value;
+            var package = document.form1.tour_package.value;
+            var arrival = document.form1.arrival_date.value;
+            var people = document.form1.head_count.value;
+            var dcode = document.form1.discount_code.value;
+            var file = document.form1.file_upload.value;
+            var status = document.form1.terms.value;
+
+            document.writeln("Thank you! You have just entered the following.");
+            document.writeln("<pre>");
+            document.writeln("First Name : " + fname);
+            document.writeln("Email Address : " + email);
+            document.writeln("Selected Package : " + package);
+            document.writeln("Arrival Date : " + arrival);
+            document.writeln("Head Count : " + people);
+            document.writeln("Discount Code : " + dcode);
+            document.writeln("File : " + file);
+            document.writeln("Terms and Condition : " + status);
+        }
+        function validate() {
+            if (document.form1.full_name.value == "") {
+                alert("Please provide your First Name.");
+                document.form1.full_name.focus();
+                return false;
+            }
+            if (document.form1.email.value == "") {
+                alert("Please provide your Email.");
+                document.form1.email.focus();
+                return false;
+            }
+            if (document.form1.tour_package.value == "default_package") {
+                alert("Please select a package.");
+                document.form1.tour_package.focus();
+                return false;
+            }
+            if (document.form1.arrival_date.value == "") {
+                alert("Please select an arrival date.");
+                document.form1.arrival_date.focus();
+                return false;
+            }
+            if (document.form1.head_count.value == "") {
+                alert("Please enter a number between 1 and 10.");
+                document.form1.head_count.focus();
+                return false;
+            }
+            if (document.form1.terms.value == "" || document.getElementById("terms_disagree").checked) {
+                alert("Please agree to the terms and conditions.");
+                document.form1.head_count.focus();
+                return false;
+            }
+
+            return addtext();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="forms">
+        <h1>Reservation Form</h1>
+        <p><span style="color: red">*</span> denotes mandatory</p>
+        <form name="form1">
+            <p>
+                <label for="full_name">Full Name <span style="color: red">*</span></label>
+                <input type="text" name="full_name" maxlength="50" size="30">
+                <br>
+                <label for="email">Email Address <span style="color: red">*</span></label>
+                <input type="text" name="email" maxlength="50" size="30">
+            </p>
+            <p>
+                <label for="tour_package">Select Tour Package <span style="color: red">*</span></label>
+                <select name="tour_package">
+                    <option value="default_package" selected>Package</option>
+                    <option value="palawan">Palawan</option>
+                    <option value="cebu">Cebu</option>
+                    <option value="davao">Davao</option>
+                </select>
+                <br>
+                <label for="arrival_date">Arrival Date <span style="color: red">*</span></label>
+                <input type="datetime-local" name="arrival_date">
+            </p>
+            <p>
+                <label for="head_count">Number of Persons <span style="color: red">*</span></label>
+                <input type="text" name="head_count" maxlength="50" size="3">
+            </p>
+            <p>
+                What would you want to avail? <span style="color: red">*</span>
+                <br>
+                <label for="type_boarding">Boarding</label>
+                <input type="checkbox" name="tour_type" id="type_boarding" value="1">
+                <br>
+                <label for="type_fooding">Fooding</label>
+                <input type="checkbox" name="tour_type" id="type_fooding" value="2">
+                <br>
+                <label for="type_sightseeing">Sight Seeing</label>
+                <input type="checkbox" name="tour_type" id="type_sightseeing" value="3">
+            </p>
+            <p>
+                <label for="discount_code">Discount Coupon Code </label>
+                <input type="text" name="discount_code">
+            </p>
+            <p>
+                <label for="file_upload">File Upload</label>
+                <input type="file" name="file_upload">
+            </p>
+            <p>
+                Terms and Conditions <span style="color: red">*</span><br>
+                <label for="terms">I agree</label>
+                <input type="radio" name="terms" id="terms_agree">
+                <label for="terms_disagree">I disagree</label>
+                <input type="radio" name="terms" id="terms_disagree">
+            </p>
+
+            <input type="button" value="Complete Reservation" onclick="validate()">
+            <input type="reset">
+        </form>
+    </div>
+</body>

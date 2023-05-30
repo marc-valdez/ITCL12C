@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Segoe UI;
+            color: #fff;
+            background-color: #222;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .forms {
+            background-color: white;
+            color: black;
+            margin: auto;
+            text-align: right;
+            width: 260px;
+            height: auto;
+            padding: 50px;
+        }
+
+        .left_column {
+            text-align: right;
+            width: 100px;
+        }
+
+        .right_column {
+            text-align: left;
+        }
+    </style>
+    <script type="text/javascript">
+        function validate() {
+            if (document.login_form.user_name.value == "") {
+                alert("Please provide your username.");
+                document.login_form.user_name.focus();
+                return false;
+            }
+            if (document.login_form.user_password.value == "") {
+                alert("Please type your password.");
+                document.login_form.user_password.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="forms">
+        <form name="login_form" action="reservation_form.html">
+            <p>
+                Username: <input type="text" name="user_name" />
+                <br>
+                Password: <input type="password" name="user_password" />
+                <br>
+                <input type="submit" value="LOGIN" onclick="return validate()" />
+            </p>
+        </form>
+    </div>
+</body>
