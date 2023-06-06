@@ -3,57 +3,7 @@
 <head>
     <title>Form Validation</title>
     <link rel="stylesheet" href="main.css">
-    <script>
-        function isEmpty(value, message) {
-            if (value === null || value === "") {
-                alert(message);
-                return true;
-            }
-            return false;
-        }
-
-        function isFormattedCorrectly(value, regex, format) {
-            if (!regex.test(value)) {
-                alert("Input must be in this format: " + format);
-                return false;
-            }
-            return true;
-        }
-
-        function validateForm() {
-            var student_id = document.getElementById("student_id").value;
-            var student_id_regex = /^\d{4}-\d{1}-\d{5}$/;
-            if (isEmpty(student_id, "Student ID is required")) {
-                return false;
-            } else if (isFormattedCorrectly(student_id, student_id_regex, "XXXX-X-XXXXX")) {
-                return false;
-            }
-
-            var name = document.getElementById("name").value;
-            if (isEmpty(name, "Name is required")) {
-                return false;
-            }
-
-            var address = document.getElementById("address").value;
-            if (isEmpty(address, "Address is required")) {
-                return false;
-            }
-
-            var zipcode = document.getElementById("zipcode").value;
-            var zipcode_regex = /^\d{5}$/;
-            if (isEmpty(zipcode, "Zip Code is required")) {
-                return false;
-            } else if (isFormattedCorrectly(zipcode, zipcode_regex, "00000")) {
-                return false;
-            }
-
-            // var city = document.getElementById("city").value;
-            // if (isEmpty(city, "City is required")) {
-            //     event.preventDefault();
-            // }
-
-        }
-    </script>
+    <script src="valdez.js"></script>
 </head>
 
 <body>
@@ -66,7 +16,7 @@
                         <label for="student_id">Student ID<span style="color: red"> *</span></label>
                     </td>
                     <td class="right_column">
-                        <input type="text" id="student_id" value="0000-0-00000">
+                        <input type="text" id="student_id" placeholder="0000-0-00000">
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +24,7 @@
                         <label for="name">Name<span style="color: red"> *</span></label>
                     </td>
                     <td class="right_column">
-                        <input type="text" id="name" value="Last, First">
+                        <input type="text" id="name" placeholder="John Doe">
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +32,7 @@
                         <label for="address">Address<span style="color: red"> *</span></label>
                     </td>
                     <td class="right_column">
-                        <input type="text" id="address" value="Address">
+                        <input type="text" id="address" placeholder="send me your location">
                     </td>
                 </tr>
                 <tr>
@@ -98,11 +48,11 @@
                         <label for="city">City<span style="color: red"> *</span></label>
                     </td>
                     <td class="right_column">
-                        <select>
-                            <option value="" selected>Please Select...</option>
-                            <option value="New York">New York</option>
-                            <option value="Los Angeles">Los Angeles</option>
-                            <option value="Chicago">Chicago</option>
+                        <select id="city" name="city">
+                            <option id="default_city" name="city" value="" selected>Please Select...</option>
+                            <option id="city1" name="city" value="New York">New York</option>
+                            <option id="city2" name="city" value="Los Angeles">Los Angeles</option>
+                            <option id="city3" name="city" value="Chicago">Chicago</option>
                         </select>
                     </td>
                 </tr>
@@ -111,7 +61,7 @@
                         <label for="gender">Gender<span style="color: red"> *</span></label>
                     </td>
                     <td class="right_column">
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="male" name="gender" value="male" checked>
                         <label for="male">Male</label><br>
                         <input type="radio" id="female" name="gender" value="female">
                         <label for="female">Female</label>
