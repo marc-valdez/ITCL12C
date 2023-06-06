@@ -2,118 +2,220 @@
 
 <head>
     <title>Form Validation</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 14px;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
+    <link rel="stylesheet" href="main.css">
+    <script>
+        function isEmpty(value, message) {
+            if (value === null || value === "") {
+                alert(message);
+                return true;
+            }
+            return false;
         }
 
-        form ul li {
-            list-style: none;
-            display: block;
-            margin-bottom: 4px;
-            
+        function isFormattedCorrectly(value, regex, format) {
+            if (!regex.test(value)) {
+                alert("Input must be in this format: " + format);
+                return false;
+            }
+            return true;
         }
-    </style>
+
+        function validateForm() {
+            var student_id = document.getElementById("student_id").value;
+            var student_id_regex = /^\d{4}-\d{1}-\d{5}$/;
+            if (isEmpty(student_id, "Student ID is required")) {
+                return false;
+            } else if (isFormattedCorrectly(student_id, student_id_regex, "XXXX-X-XXXXX")) {
+                return false;
+            }
+
+            var name = document.getElementById("name").value;
+            if (isEmpty(name, "Name is required")) {
+                return false;
+            }
+
+            var address = document.getElementById("address").value;
+            if (isEmpty(address, "Address is required")) {
+                return false;
+            }
+
+            var zipcode = document.getElementById("zipcode").value;
+            var zipcode_regex = /^\d{5}$/;
+            if (isEmpty(zipcode, "Zip Code is required")) {
+                return false;
+            } else if (isFormattedCorrectly(zipcode, zipcode_regex, "00000")) {
+                return false;
+            }
+
+            // var city = document.getElementById("city").value;
+            // if (isEmpty(city, "City is required")) {
+            //     event.preventDefault();
+            // }
+
+        }
+    </script>
 </head>
 
 <body>
-    <div>
+    <div class="form">
         <h1>HTML Form Input Validation Using HTML5</h1>
-        <form>
-            <ul>
-                <li>
-                    <label for="student_id">Student ID*&nbsp;</label>
-                    <input type="text" id="student_id" placeholder="0000-0-00000">
-                </li>
-                <li>
-                    <label for="name">Name*&nbsp;</label>
-                    <input type="text" id="name" placeholder="Last, First">
-                </li>
-                <li>
-                    <label for="address">Address*&nbsp;</label>
-                    <input type="text" id="address" placeholder="Address">
-                </li>
-                <li>
-                    <label for="zipcode">Zip Code*&nbsp;</label>
-                    <input type="text" id="zipcode" placeholder="enter a 5-digit code">
-                </li>
-                <li>
-                    <label for="city">City*&nbsp;</label>
-                    <select>
-                        <option value="default" selected>Please Select...</option>
-                        <option value="New York">New York</option>
-                        <option value="Los Angeles">Los Angeles</option>
-                        <option value="Chicago">Chicago</option>
-                    </select>
-                </li>
-                <li>
-                    <label for="gender">Gender*&nbsp;</label>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-                </li>
-                <li>
-                    <label>Courses*&nbsp;</label>
-                    <input type="checkbox" id="course1" name="courses" value="BSIT">
-                    <label for="course1">BSIT</label>
-                    <input type="checkbox" id="course2" name="courses" value="BSCS">
-                    <label for="course2">BSCS</label>
-                    <input type="checkbox" id="course3" name="courses" value="BSEM">
-                    <label for="course3">BSEM</label>
-                </li>
-                <li>
-                    <label>Schedule*&nbsp;</label>
-                    <input type="checkbox" id="schedule1" name="schedule" value="Morning Class">
-                    <label for="schedule1">Morning Class</label>
-                    <input type="checkbox" id="schedule2" name="schedule" value="Afternoon Class">
-                    <label for="schedule2">Afternoon Class</label>
-                    <input type="checkbox" id="schedule3" name="schedule" value="Evening Class">
-                    <label for="schedule3">Evening Class</label>
-                </li>
-                <li>
-                    <label for="phone_number">Phone*&nbsp;</label>
-                    <input type="text" id="phone_number" placeholder="000-0000">
-                </li>
-                <li>
-                    <label for="email">Email*&nbsp;</label>
-                    <input type="email" id="email" placeholder="example@email.com">
-                </li>
-                <li>
-                    <label for="password">Password*&nbsp;</label>
-                    <input type="password" id="password" placeholder="6-8 characters">
-                </li>
-                <li>
-                    <label for="verify_password">Verify Password*&nbsp;</label>
-                    <input type="password" id="verify_password" placeholder="retype password">
-                </li>
-                <li>
-                    <label for="birthdate">Birthdate*&nbsp;</label>
-                    <input type="date" id="birthdate">
-                </li>
-                <li>
-                    <label for="file">File Upload*&nbsp;</label>
-                    <input type="file" id="file">
-                </li>
-                <li>
-                    <label for="enrollment_time">Enrollment Date*&nbsp;</label>
-                    <input type="time" id="enrollment_time">
-                </li>
-                <li>
-                    <label for="notes">Notes&nbsp;</label>
-                    <textarea id="notes"></textarea>
-                </li>
-                <li>
-                    <input type="submit" value="SEND">
-                    <input type="reset" value="CLEAR">
-                </li>
-            </ul>
+        <form id="registration_form" onsubmit="return validateForm()">
+            <table border="0" cellspacing="4" align="center">
+                <tr>
+                    <td class="left_column">
+                        <label for="student_id">Student ID<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="text" id="student_id" value="0000-0-00000">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="name">Name<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="text" id="name" value="Last, First">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="address">Address<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="text" id="address" value="Address">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="zipcode">Zip Code<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="text" id="zipcode" placeholder="enter a 5-digit code">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="city">City<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <select>
+                            <option value="" selected>Please Select...</option>
+                            <option value="New York">New York</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="Chicago">Chicago</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="gender">Gender<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label>Courses<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="checkbox" id="course1" name="courses" value="BSIT">
+                        <label for="course1">BSIT</label><br>
+                        <input type="checkbox" id="course2" name="courses" value="BSCS">
+                        <label for="course2">BSCS</label><br>
+                        <input type="checkbox" id="course3" name="courses" value="BSEM">
+                        <label for="course3">BSEM</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label>Schedule<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="checkbox" id="schedule1" name="schedule" value="Morning Class">
+                        <label for="schedule1">Morning Class</label><br>
+                        <input type="checkbox" id="schedule2" name="schedule" value="Afternoon Class">
+                        <label for="schedule2">Afternoon Class</label><br>
+                        <input type="checkbox" id="schedule3" name="schedule" value="Evening Class">
+                        <label for="schedule3">Evening Class</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_column">
+                        <label for="phone_number">Phone<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="text" id="phone_number" placeholder="000-0000">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="email">Email<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="email" id="email" placeholder="example@email.com">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="password">Password<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="password" id="password" placeholder="6-8 characters">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="verify_password">Verify Password<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="password" id="verify_password" placeholder="retype password">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="birthdate">Birthdate<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="date" id="birthdate">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="file">File Upload<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="file" id="file">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="enrollment_time">Enrollment Date<span style="color: red"> *</span></label>
+                    </td>
+                    <td class="right_column">
+                        <input type="time" id="enrollment_time">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column">
+                        <label for="notes">Notes&nbsp;</label>
+                    </td>
+                    <td class="right_column">
+                        <textarea id="notes"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left_column"></td>
+                    <td class="right_column">
+                        <input type="submit" value="SEND">
+                        <input type="reset" value="CLEAR">
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </body>

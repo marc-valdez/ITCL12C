@@ -1,0 +1,18 @@
+body {
+    font-family: Segoe UI;
+    font-size: medium;
+    color: #fff;
+    background-color: #222;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left_column {
+    text-align: right;
+}
+
+.right_column {
+    text-align: left;
+}
