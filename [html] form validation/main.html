@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        form ul li {
+            list-style: none;
+            display: block;
+            margin-bottom: 4px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>HTML Form Input Validation Using HTML5</h1>
+        <form>
+            <ul>
+                <li>
+                    <label for="student_id">Student ID*&nbsp;</label>
+                    <input type="text" id="student_id" placeholder="0000-0-00000">
+                </li>
+                <li>
+                    <label for="name">Name*&nbsp;</label>
+                    <input type="text" id="name" placeholder="Last, First">
+                </li>
+                <li>
+                    <label for="address">Address*&nbsp;</label>
+                    <input type="text" id="address" placeholder="Address">
+                </li>
+                <li>
+                    <label for="zipcode">Zip Code*&nbsp;</label>
+                    <input type="text" id="zipcode" placeholder="enter a 5-digit code">
+                </li>
+                <li>
+                    <label for="city">City*&nbsp;</label>
+                    <select>
+                        <option value="default" selected>Please Select...</option>
+                        <option value="New York">New York</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Chicago">Chicago</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="gender">Gender*&nbsp;</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </li>
+                <li>
+                    <label>Courses*&nbsp;</label>
+                    <input type="checkbox" id="course1" name="courses" value="BSIT">
+                    <label for="course1">BSIT</label>
+                    <input type="checkbox" id="course2" name="courses" value="BSCS">
+                    <label for="course2">BSCS</label>
+                    <input type="checkbox" id="course3" name="courses" value="BSEM">
+                    <label for="course3">BSEM</label>
+                </li>
+                <li>
+                    <label>Schedule*&nbsp;</label>
+                    <input type="checkbox" id="schedule1" name="schedule" value="Morning Class">
+                    <label for="schedule1">Morning Class</label>
+                    <input type="checkbox" id="schedule2" name="schedule" value="Afternoon Class">
+                    <label for="schedule2">Afternoon Class</label>
+                    <input type="checkbox" id="schedule3" name="schedule" value="Evening Class">
+                    <label for="schedule3">Evening Class</label>
+                </li>
+                <li>
+                    <label for="phone_number">Phone*&nbsp;</label>
+                    <input type="text" id="phone_number" placeholder="000-0000">
+                </li>
+                <li>
+                    <label for="email">Email*&nbsp;</label>
+                    <input type="email" id="email" placeholder="example@email.com">
+                </li>
+                <li>
+                    <label for="password">Password*&nbsp;</label>
+                    <input type="password" id="password" placeholder="6-8 characters">
+                </li>
+                <li>
+                    <label for="verify_password">Verify Password*&nbsp;</label>
+                    <input type="password" id="verify_password" placeholder="retype password">
+                </li>
+                <li>
+                    <label for="birthdate">Birthdate*&nbsp;</label>
+                    <input type="date" id="birthdate">
+                </li>
+                <li>
+                    <label for="file">File Upload*&nbsp;</label>
+                    <input type="file" id="file">
+                </li>
+                <li>
+                    <label for="enrollment_time">Enrollment Date*&nbsp;</label>
+                    <input type="time" id="enrollment_time">
+                </li>
+                <li>
+                    <label for="notes">Notes&nbsp;</label>
+                    <textarea id="notes"></textarea>
+                </li>
+                <li>
+                    <input type="submit" value="SEND">
+                    <input type="reset" value="CLEAR">
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
