@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: black;
+        }
+
+        .calculator_body {
+            display: grid;
+            width: auto;
+            max-width: min-content;
+            height: auto;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: auto;
+            padding: 10px;
+            background-color: black;
+            box-shadow: 0 0 20px black;
+        }
+
+        .display {
+            text-align: right;
+            font-size: 30px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: auto;
+            width: 95%;
+            max-width: fit-content;
+            color: ivory;
+        }
+
+        .clear_button,
+        .numerics,
+        .operators,
+        .specials {
+            display: block;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 2px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 2px;
+            transition: ease-in-out 0.3s;
+            min-width: 9vh;
+            min-height: 6vh;
+        }
+
+        .clear_button,
+        .operators {
+            width: auto;
+            min-width: 6vh;
+        }
+
+        .clear_button,
+        .specials {
+            background-color: orchid;
+        }
+
+        .clear_button:hover,
+        .specials:hover {
+            background-color: darkorchid;
+        }
+
+        .numerics {
+            background-color: slateblue;
+        }
+
+        .numerics:hover {
+            background-color: darkslateblue;
+        }
+
+        .operators {
+            background-color: blue;
+        }
+
+        .operators:hover {
+            background-color: darkblue;
+        }
+    </style>
+    <script>
+        function clear_display() {
+            // clear the display
+            document.getElementById("display").value = "";
+        }
+        function display(value) {
+            document.getElementById("display").value += value;
+        }
+        function calculate() {
+            var p = document.getElementById("display").value;
+            var q = eval(p);
+            document.getElementById("display").value = q;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="calculator_body">
+        <table border="0" cellpadding="2" cellspacing="0">
+            <tr>
+                <td colspan="3">
+                    <input type="text" class="display" id="display" placeholder="1234567890" disabled>
+                </td>
+                <td>
+                    <button class="clear_button" id="clear_button" onclick="clear_display()">C</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="numerics" id="one" onclick="display('1')">1</button>
+                </td>
+                <td>
+                    <button class="numerics" id="two" onclick="display('2')">2</button>
+                </td>
+                <td>
+                    <button class="numerics" id="three" onclick="display('3')">3</button>
+                </td>
+                <td>
+                    <button class="operators" id="divide" onclick="display('/')">/</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="numerics" id="four" onclick="display('4')">4</button>
+                </td>
+                <td>
+                    <button class="numerics" id="five" onclick="display('5')">5</button>
+                </td>
+                <td>
+                    <button class="numerics" id="six" onclick="display('6')">6</button>
+                </td>
+                <td>
+                    <button class="operators" id="subtract" onclick="display('-')">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="numerics" id="seven" onclick="display('7')">7</button>
+                </td>
+                <td>
+                    <button class="numerics" id="eight" onclick="display('8')">8</button>
+                </td>
+                <td>
+                    <button class="numerics" id="nine" onclick="display('9')">9</button>
+                </td>
+                <td>
+                    <button class="operators" id="add" onclick="display('+')">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="specials" id="dot" onclick="display('.')">.</button>
+                </td>
+                <td>
+                    <button class="numerics" id="zero" onclick="display('0')">0</button>
+                </td>
+                <td>
+                    <button class="specials" id="equals" onclick="calculate()">=</button>
+                </td>
+                <td>
+                    <button class="operators" id="multiply" onclick="display('*')">*</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
