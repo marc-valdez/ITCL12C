@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Simple Chatbot</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .main {
+            background-color: lightslategray;
+            display: block;
+            text-align: center;
+            padding: 50px;
+            border: 0px solid black;
+            border-radius: 5px;
+        }
+
+        input[type=text] {
+            text-align: center;
+            font-size: 20px;
+            padding: 5px;
+            border: none;
+            border-bottom: 2px solid black;
+        }
+    </style>
+    <script>
+        function talk() {
+            var ans = {
+                "Hi": "Hello!",
+                "Hello": "Hi!",
+                "How are you?": "I am good.",
+                "What is your name?": "My name is Chatbot",
+                "What is your age?": "As an AI language model, I do not age.",
+                "Who is Gamora?": "I'll do you one better, why is Gamora!",
+                "Thank you": "You're welcome.",
+            };
+
+            var user = document.getElementById('userBox').value;
+            document.getElementById('chatLog').innerHTML = user + "<br>";
+
+            if (user in ans) {
+                document.getElementById('chatLog').innerHTML = ans[user] + "<br>";
+            }
+            else {
+                document.getElementById('chatLog').innerHTML = "Sorry, I didn't understand <br>";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <h4>Chatbot</h4>
+        <p>Let's have some interactions!</p>
+
+        <input type="text" id="userBox" onkeydown="if(event.keyCode == 13){talk()}" placeholder="How are you feeling?">
+
+        <div class="response_area">
+            <p id="chatLog">Response Here</p>
+        </div>
+    </div>
+
+</body>
